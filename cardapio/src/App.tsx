@@ -1,9 +1,8 @@
-import { useState } from 'react' 4.1k (gzipped : 1.8k)
-import './card.css'
-import './App.css'
-import { Card } from './components/card/card'
-import { useFoodData } from './hooks/useFoodData'
-import { CreateModal } from './components/create-modal/create-modal'
+import { useState } from 'react';
+import './App.css';
+import { Card } from './components/card/card';
+import { useFoodData } from './hooks/useFoodData';
+import { CreateModal } from './components/create-modal/create-modal';
 
 function App() {
  
@@ -19,13 +18,15 @@ function App() {
       <div className="container">
         <h1>Cardápio</h1>
         <div className="card-grid">
-          {data?.map((foodData: { price: number; title: string; image: string }) => 
-          <Card price={foodData.price} 
+          {data?.map((foodData: { id?:number; price: number; title: string; image: string }) => 
+          <Card 
+                key={foodData.id}
+                price={foodData.price} 
                 title={foodData.title} 
                 image={foodData.image}
           />)}
           </div>
-          {isModalOpen && <CreateModal closeModal=(handleOpenModal)/>}
+          {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}
           <button onClick={handleOpenModal}>novo</button>
       </div>
       
