@@ -13,7 +13,7 @@
 }
 
 .container button {
-    background-color: #0275db;
+    background-color: #0289ff;
     color: white;
     font-weight: bold;
     bottom: 16px;
@@ -28,4 +28,9 @@
 
 .hidden {
     display: none;
+}
+
+.btnNew{
+    align-self: flex-end;
+    margin: 0 70px 20px 0px;
 }

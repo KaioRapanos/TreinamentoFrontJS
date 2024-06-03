@@ -19,8 +19,8 @@ interface ModalProps {
 const Input = <T extends string | number>({ label, value, updateValue }: InputProps<T>) => {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;
-        if (typeof value === 'number') {
-            updateValue(parseFloat(newValue) as T);
+        if (typeof value === 'string' && label === "price") {
+            updateValue(newValue.replace(",", ".") as T);
         } else {
             updateValue(newValue as T);
         }
@@ -108,14 +108,16 @@ export function FoodModal({ closeModal, foodData }: ModalProps) {
                     <Input label="price" value={price} updateValue={setPrice} />
                     <Input label="image" value={image} updateValue={setImage} />
                 </form>
-                <button onClick={submit} className="btn-secondary">
-                    {isLoading ? 'Postando...' : 'Postar'}
-                </button>
-                {isUpdateMode && (
-                    <button onClick={handleDelete} className="btn-secondary" disabled={isDeleting}>
-                        {isDeleting ? "Excluindo..." : "Excluir"}
+                <div className="button-container">
+                    <button onClick={submit} className="btn-secondary">
+                        {isLoading ? 'Postando...' : 'Postar'}
                     </button>
-                )}
+                    {isUpdateMode && (
+                        <button onClick={handleDelete} className={["btn-secondary", "btn-excluir"].join(" ")} disabled={isDeleting}>
+                            {isDeleting ? "Excluindo..." : "Excluir"}
+                    </button>
+                    )}
+                </div>
             </div>
         </div>
     );

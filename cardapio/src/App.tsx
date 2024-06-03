@@ -44,7 +44,7 @@ function App() {
           {isModalOpen && (
             <FoodModal closeModal={handleCloseModal} foodData={selectedFood}/>
           )}
-          <button className={isModalOpen ? 'hidden' : ''} 
+          <button className={isModalOpen ? 'hidden' : 'btnNew'} 
             onClick={() => handleOpenModal()}>novo
           </button>
       </div>

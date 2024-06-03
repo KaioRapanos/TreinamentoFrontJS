@@ -13,7 +13,7 @@ export function Card({price,title,image,onEdit} : CardProps){
         <div className="card">
             <img src={image}/>
             <h2>{title}</h2>
-            <p><b>Valor:</b>{formattedPrice}</p>
+            <p><b>Valor:  </b><p className="price">R$ {formattedPrice}</p></p>
             <button onClick={onEdit}></button>
         </div>
     )

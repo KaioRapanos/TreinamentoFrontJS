@@ -55,6 +55,12 @@
     font-size: 18px;
 }
 
+.modal-overlay .modal-body .button-container {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+
 .modal-overlay .modal-body .btn-secondary {
     position: initial;
     width: 100%;
@@ -62,7 +68,6 @@
 }
 
 .modal-overlay .modal-body .btn-secondary:hover {
-    background-color: #3a44f8;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
     transform: scale(1.01);
     margin-top: 0;
@@ -70,4 +75,8 @@
 
 .erro-message{
     color: red;
+}
+
+.btn-secondary.btn-excluir{
+    background-color: red;
 }
