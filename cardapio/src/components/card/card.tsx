@@ -14,7 +14,7 @@ export function Card({price,title,image,onEdit} : CardProps){
             <img src={image}/>
             <h2>{title}</h2>
             <p><b>Valor:</b>{formattedPrice}</p>
-            <button onClick={onEdit}>Editar</button>
+            <button onClick={onEdit}></button>
         </div>
     )
 }
